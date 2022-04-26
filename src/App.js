@@ -1,23 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import Resume from "./components/resume/resume";
+import DarkModeToggle from "./components/utils/darkModeToggle";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App bg-white dark:bg-black min-h-ful">
+      <div className="container mx-auto px-4 min-h-ful">
+        <DarkModeToggle />
+        <Resume />
+      </div>
     </div>
   );
 }
