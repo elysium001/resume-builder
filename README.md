@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Simple Resume Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To use, just load up the following component into your project.
 
-## Available Scripts
+```js
+const myInfo = {
+    name: "Andres O. Serrano",
+    title: "Software Systems Engineer",
+    address: "Rio Rancho, NM",
+    phone: "505-603-7069",
+    email: "a.omarserrano@gmail.com",
+    objective: `Versatile Systems Engineer with over seven years of cross-functional leadership in implementation, validation and deployment of large complex systems. Exceptional knowledge of Web-Technologies. Well-versed in large-scale deployments, migrations and custom CMS solutions.`,
+    workHistory: [
+      {
+        startDate: "10/2019",
+        endDate: "Current",
+        title: "Software Systems Engineer",
+        company: "Sandia National Laboratories",
+        location: "Albuquerque, NM",
+        content: `<ul><li>Proposed technical feasibility solutions for new system designs and suggested options for performance improvement of technical components.</li><li>Developed CMS systems for lab wide use, allowing for discontinuation of legacy software, effectively reducing maintenance costs and improving security.</li><li>Analyzed feasibility, design, operation and performance of new web technology components which helped to improve Section 508/IDEA compliance.</li><li>Improved developer environments by implementing time-saving CI/CD task runners and Automation tasks to insure best practices and better security for our projects.</li></ul>`,
+      },
+      {
+        startDate: "06/2016",
+        endDate: "07/2019",
+        title: "Software Engineer",
+        company: "Scientific Applications International Corporation",
+        location: "Albuquerque, NM",
+        content: `<ul><li>Reviewed project specifications and designed technology solutions that met or exceeded performance expectations.</li><li>Orchestrated efficient large-scale software deployments using GitLab CI/CD task runners.</li><li>Produced UI design and development for a variety of web technologies including WordPress and Angular frameworks.</li></ul>`,
+      },
+      {
+        startDate: "11/2014",
+        endDate: "05/2016",
+        title: "Lead Mobile Frontend Developer",
+        company: "Swanson Health Products",
+        location: "Fargo, ND",
+        content: `<ul><li>Assembled and addressed technical and design requirements, integrating user-facing and front-end elements to maintain web presence effectiveness.</li><li>Collaborated with stakeholders during development processes to confirm creative proposals and design best practices.</li><li>Managed full-cycle design tasks, handling phases from conception to completion while maintaining guidelines throughout.</li></ul>`,
+      },
+    ],
+    skills: [
+      { experience: 87.0, name: "ReactJS" },
+      { experience: 97.0, name: "WordPress" },
+      { experience: 67.0, name: "WebPack JS" },
+      { experience: 77.0, name: "PHP" },
+    ],
+  }
+```
 
-In the project directory, you can run:
+```jsx
+import './App.css';
+import Resume from "./components/resume/resume";
+import DarkModeToggle from "./components/utils/darkModeToggle";
 
-### `npm start`
+function App() {
+  return (
+    <div className="App bg-white dark:bg-black min-h-ful">
+      <div className="container mx-auto px-4 min-h-ful">
+        <DarkModeToggle />
+        <Resume {...myInfo}/>
+      </div>
+    </div>
+  );
+}
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+export default App;
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
