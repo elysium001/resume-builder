@@ -1,5 +1,8 @@
 # Simple Resume Component
 
+### Preview URL
+[https://elysium001.github.io/resume/](https://elysium001.github.io/resume/)
+
 To use, just load up the following component into your project.
 
 ```js
