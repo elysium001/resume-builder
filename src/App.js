@@ -8,7 +8,7 @@ function App() {
   const [openResumeBuilder, setopenResumeBuilder] = useState(false)
   return (
     <div className="App bg-white dark:bg-black min-h-ful">
-      <Navigation onCreateResume={()=>setopenResumeBuilder(true)}/>
+      <Navigation onCreateResume={()=>setopenResumeBuilder(!openResumeBuilder)}/>
       <div className="container mx-auto px-4 min-h-ful py-4">
         <DarkModeToggle />
         <Resume openResume={openResumeBuilder}/>
