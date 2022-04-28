@@ -40,25 +40,23 @@ const exampleResume = {
     { experience: 67.0, name: "WebPack JS" },
     { experience: 77.0, name: "PHP" },
   ],
-}
+};
 
 export default function ResumeTemplate(props) {
-  const {
-    onLoadResume,
-    resume,
-  } = props;
-  const [ resumeObj ] = useState(resume || exampleResume)
-  const {
-    name,
-    title,
-    address,
-    phone,
-    email,
-    objective,
-    workHistory,
-    skills,
-  } = resumeObj
-  const colors = ["green", "blue", "yellow", "red"];
+  const { onLoadResume, resume } = props;
+  const [resumeObj] = useState(resume || exampleResume);
+  const { name, title, address, phone, email, objective, workHistory, skills } =
+    resumeObj;
+  const colors = [
+    "green",
+    "blue",
+    "yellow",
+    "red",
+    "cyan",
+    "gray",
+    "purple",
+    "orange",
+  ];
 
   useEffect(() => {
     onLoadResume(resumeObj);

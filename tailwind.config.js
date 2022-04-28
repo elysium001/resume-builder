@@ -1,22 +1,24 @@
-
 module.exports = {
-  darkMode: 'class',
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
-  theme: {
-  },
+  darkMode: "class",
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {},
   safelist: [
-    'bg-green-600',
-    'text-green-100',
-    'bg-blue-600',
-    'text-blue-100',
-    'bg-red-600',
-    'text-red-100',
-    'bg-yellow-600',
-    'text-yellow-100',
+    "bg-green-600",
+    "text-green-100",
+    "bg-blue-600",
+    "text-blue-100",
+    "bg-red-600",
+    "text-red-100",
+    "bg-yellow-600",
+    "text-yellow-100",
+    "bg-cyan-600",
+    "text-cyan-600",
+    "bg-gray-600",
+    "text-gray-600",
+    "bg-purple-600",
+    "text-purple-600",
+    "bg-orange-600",
+    "text-orange-600",
   ],
-  plugins: [
-    require('@tailwindcss/forms')
-  ],
-}
+  plugins: [require("@tailwindcss/forms")],
+};
