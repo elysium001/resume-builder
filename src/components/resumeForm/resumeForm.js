@@ -1,6 +1,23 @@
 import { useState, useRef } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 
+function SaveButton({onCreateResume, resumeObj}){
+  return (
+    <div className="px-4 py-3 bg-gray-50 text-right sm:px-6 dark:bg-black">
+      <button
+        type="submit"
+        onClick={(e) => {
+          e.preventDefault();
+          onCreateResume(resumeObj);
+        }}
+        className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+      >
+        Save
+      </button>
+    </div>
+  )
+}
+
 function IncrementButton({onClick, label}) {
   return (
     <div className="flex space-x-2 justify-end col-span-6">
@@ -167,6 +184,7 @@ export default function ResumeForm(props) {
           <div className="mt-5 md:mt-0 md:col-span-2">
             <form>
               <div className="shadow overflow-hidden sm:rounded-md">
+                <SaveButton onCreateResume={props.onCreateResume} resumeObj={resumeObj}/>
                 <div className="px-4 py-5 bg-white dark:bg-gray-800 sm:p-6 ">
                   <div className="grid grid-cols-6 gap-6">
                     <div className="col-span-6 sm:col-span-3">
@@ -469,18 +487,7 @@ export default function ResumeForm(props) {
                         }}/>
                   </div>
                 </div>
-                <div className="px-4 py-3 bg-gray-50 text-right sm:px-6 dark:bg-black">
-                  <button
-                    type="submit"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      props.onCreateResume(resumeObj);
-                    }}
-                    className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                  >
-                    Save
-                  </button>
-                </div>
+                <SaveButton onCreateResume={props.onCreateResume} resumeObj={resumeObj}/>
               </div>
             </form>
           </div>
