@@ -1,5 +1,11 @@
+import { usePDF } from '@react-pdf/renderer';
+import MyDocument from './../resume/topdf';
 
 export default function Navigation(props) {
+  const { resume, onCreateResume } = props
+  const [instance, updateInstance] = usePDF({ document: <MyDocument resume={resume}/> });
+  
+  
   return (
     <nav className="flex items-center justify-between flex-wrap bg-teal-600 dark:bg-gray-800 p-6">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
@@ -29,11 +35,8 @@ export default function Navigation(props) {
           </a>
         </div>
         <div className="flex">
-          <button
-            onClick={props.downloadPDF}
-            className="mr-3 inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 flex align-center"
-          >
-            <svg
+          {(!instance.loading && !instance.error) && <a href={instance.url} download="resume.pdf" className="mr-3 inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 flex align-center">
+          <svg
               aria-hidden="true"
               focusable="false"
               data-prefix="far"
@@ -49,9 +52,9 @@ export default function Navigation(props) {
               />
             </svg>
             Download
-          </button>
+        </a>}
           <button
-            onClick={props.onCreateResume}
+            onClick={onCreateResume}
             className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
           >
             Edit this resume!
