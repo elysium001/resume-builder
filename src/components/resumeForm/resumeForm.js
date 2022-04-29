@@ -3,14 +3,14 @@ import { Editor } from "@tinymce/tinymce-react";
 
 function IncrementButton({onClick, label}) {
   return (
-    <div class="flex space-x-2 justify-end col-span-6">
+    <div className="flex space-x-2 justify-end col-span-6">
       <div>
         <button
           onClick={()=>onClick()}
           type="button"
-          class="inline-block px-6 pt-2.5 pb-2 border-2 border-gray-200 text-gray-200 font-medium text-xs leading-normal rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex align-center"
+          className="inline-block px-6 pt-2.5 pb-2 border-2 border-gray-200 text-gray-200 font-medium text-xs leading-normal rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex align-center"
         >
-          <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="arrow-alt-circle-up" class="w-4 h-4 mr-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="arrow-alt-circle-up" className="w-4 h-4 mr-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
           </svg>
           {label}
@@ -429,7 +429,7 @@ export default function ResumeForm(props) {
                             <div className="col-span-6 md:col-span-3">
                               <label
                                 htmlFor={`experience-${i}`}
-                                class="block text-sm font-medium text-gray-700 dark:text-white"
+                                className="block text-sm font-medium text-gray-700 dark:text-white"
                               >
                                 Experience Level
                               </label>

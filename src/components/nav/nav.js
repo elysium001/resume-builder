@@ -31,14 +31,14 @@ export default function Navigation(props) {
         <div className="flex">
           <button
             onClick={props.downloadPDF}
-            class="mr-3 inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 flex align-center"
+            className="mr-3 inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 flex align-center"
           >
             <svg
               aria-hidden="true"
               focusable="false"
               data-prefix="far"
               data-icon="arrow-alt-circle-up"
-              class="w-4 h-4 mr-2"
+              className="w-4 h-4 mr-2"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"

@@ -3,14 +3,14 @@ import ResumeForm from "../resumeForm/resumeForm";
 import ResumeTemplate from "./resume.template";
 
 export default function Resume(props) {
-  const { openResume } = props;
+  const { openResume, onLoadResume } = props;
   const [resumeObject, setResumeObject] = useState();
   const [openResumeForm, setOpenResumeForm] = useState();
 
   useEffect(() => {
     setOpenResumeForm(openResume);
   }, [openResume]);
-  
+
   return (
     <React.Fragment>
       {openResumeForm && (
@@ -19,13 +19,17 @@ export default function Resume(props) {
           onCreateResume={(resume) => {
             setOpenResumeForm(false);
             setResumeObject(resume);
+            onLoadResume(resume)
           }}
         />
       )}
       {!openResumeForm && (
         <ResumeTemplate
           resume={resumeObject}
-          onLoadResume={(resume) => setResumeObject(resume)}
+          onLoadResume={(resume) => {
+            setResumeObject(resume)
+            onLoadResume(resume)
+          }}
         />
       )}
     </React.Fragment>
