@@ -204,7 +204,7 @@ export default function ResumeForm(props) {
                         value={resumeObj.title}
                         onChange={({ target: { value } }) => {
                           const tempObj = { ...resumeObj };
-                          tempObj.name = value;
+                          tempObj.title = value;
                           setresumeObj(tempObj);
                         }}
                         id="title"
@@ -226,7 +226,7 @@ export default function ResumeForm(props) {
                         value={resumeObj.address}
                         onChange={({ target: { value } }) => {
                           const tempObj = { ...resumeObj };
-                          tempObj.name = value;
+                          tempObj.address = value;
                           setresumeObj(tempObj);
                         }}
                         id="address"
@@ -248,7 +248,7 @@ export default function ResumeForm(props) {
                         value={resumeObj.phone}
                         onChange={({ target: { value } }) => {
                           const tempObj = { ...resumeObj };
-                          tempObj.name = value;
+                          tempObj.phone = value;
                           setresumeObj(tempObj);
                         }}
                         id="phone"
@@ -270,7 +270,7 @@ export default function ResumeForm(props) {
                         value={resumeObj.email}
                         onChange={({ target: { value } }) => {
                           const tempObj = { ...resumeObj };
-                          tempObj.name = value;
+                          tempObj.email = value;
                           setresumeObj(tempObj);
                         }}
                         id="email"
@@ -357,7 +357,7 @@ export default function ResumeForm(props) {
                         rows="5"
                         onChange={({ target: { value } }) => {
                           const tempObj = { ...resumeObj };
-                          tempObj.name = value;
+                          tempObj.objective = value;
                           setresumeObj(tempObj);
                         }}
                         id="objective"

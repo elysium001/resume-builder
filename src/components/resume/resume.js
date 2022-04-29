@@ -9,7 +9,7 @@ export default function Resume(props) {
 
   useEffect(() => {
     setOpenResumeForm(openResume);
-  }, [openResume]);
+  }, [openResume, onLoadResume]);
 
   return (
     <React.Fragment>

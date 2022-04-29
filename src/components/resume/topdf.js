@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
-import ReactHtmlParser from 'react-html-parser';
+import ReactHtmlParser from "react-html-parser";
 
 // Create styles
 const styles = StyleSheet.create({
   page: {
     flexDirection: "column",
     backgroundColor: "#E4E4E4",
-    padding: 16
+    padding: 16,
   },
   row: {
     flexDirection: "row",
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   },
   column: {
     flexDirection: "column",
-    marginBottom: 8
+    marginBottom: 8,
   },
 });
 
@@ -37,85 +37,146 @@ const MyDocument = (props) => {
     "orange",
   ];
 
-  const regularSize = '12';
-  const lgSize = '24';
-  const regularWeight = 'regular';
-  const boldWeight = 'bold';
+  const regularSize = "12";
+  const lgSize = "24";
+  const regularWeight = "regular";
+  const boldWeight = "bold";
 
   const parseContent = (content) => {
     const parsedHtml = ReactHtmlParser(content);
-    const type = parsedHtml.type;
-    console.log(type)
-    return parsedHtml
-  }
-    
+    return parsedHtml.map((el) => {
+      const type = el?.type;
+      if (type === "ul") {
+        return el.props.children.map((kid, i) => {
+          // return <Text style={{flexDirection: 'column'}}>{` • ${kid.props.children}`}</Text>;
+          return (
+            <View
+              style={{ flexDirection: "row", fontSize: regularSize, fontWeight: boldWeight, marginBottom: 4 }}
+              key={i}
+            >
+              <Text style={{ marginHorizontal: 8 }}>•</Text>
+              <Text>
+                {kid.props.children}
+              </Text>
+            </View>
+          );
+        });
+      } else {
+        return parsedHtml;
+      }
+    });
+  };
+
   return (
     <Document>
       <Page object-fit="fill" size="A4" style={styles.page}>
-        <View style={[styles.row,{fontSize: lgSize,fontWeight: boldWeight}]}>
+        <View
+          style={[styles.row, { fontSize: lgSize, fontWeight: boldWeight }]}
+        >
           <Text>{name}</Text>
         </View>
-        <View style={[styles.row,{fontSize: '18',fontWeight: regularWeight}]}>
+        <View
+          style={[styles.row, { fontSize: "18", fontWeight: regularWeight }]}
+        >
           <Text>{title}</Text>
         </View>
-        <View style={[styles.row,{fontSize: regularSize,fontWeight: regularWeight}]}>
+        <View
+          style={[
+            styles.row,
+            { fontSize: regularSize, fontWeight: regularWeight },
+          ]}
+        >
           <Text>{address}</Text>
-          <Text style={{marginHorizontal: 8}}>|</Text>
+          <Text style={{ marginHorizontal: 8 }}>|</Text>
           <Text>{phone}</Text>
-          <Text style={{marginHorizontal: 8}}>|</Text>
+          <Text style={{ marginHorizontal: 8 }}>|</Text>
           <Text>{email}</Text>
         </View>
-        <View style={[styles.row,{fontSize: '14',fontWeight: boldWeight}]}>
+        <View style={[styles.row, { fontSize: "14", fontWeight: boldWeight }]}>
           <Text>Summary</Text>
         </View>
-        <View style={[styles.row,{fontSize: regularSize,fontWeight: regularWeight}]}>
+        <View
+          style={[
+            styles.row,
+            { fontSize: regularSize, fontWeight: regularWeight },
+          ]}
+        >
           <Text>{objective}</Text>
         </View>
-        <View style={[styles.row,{fontSize: '14',fontWeight: boldWeight}]}>
+        <View style={[styles.row, { fontSize: "14", fontWeight: boldWeight }]}>
           <Text>Work History</Text>
         </View>
-          {workHistory &&
-            workHistory.map(
-              (
-                { startDate, endDate, title, company, location, content },
-                i
-              ) => {
-                return (
-                  <div key={i}>
-                    <View style={[styles.row,{fontSize: regularSize,fontWeight: regularWeight}]}>
-                      <View style={[styles.column, {marginLeft: 0, marginRight: 10}]}>
-                        <Text>
-                          {startDate} - {endDate}
-                        </Text>
+        {workHistory &&
+          workHistory.map(
+            ({ startDate, endDate, title, company, location, content }, i) => {
+              return (
+                <div key={i}>
+                  <View
+                    style={[
+                      styles.row,
+                      { fontSize: regularSize, fontWeight: regularWeight },
+                    ]}
+                  >
+                    <View
+                      style={[
+                        styles.column,
+                        { marginLeft: 0, marginRight: 10 },
+                      ]}
+                    >
+                      <Text>
+                        {startDate} - {endDate}
+                      </Text>
+                    </View>
+                    <View style={[styles.column, { marginRight: 0 }]}>
+                      <View
+                        style={[
+                          styles.row,
+                          { fontSize: "14", fontWeight: boldWeight },
+                        ]}
+                      >
+                        <Text>{title}</Text>
                       </View>
-                      <View style={[styles.column, {marginRight: 0}]}>
-                        <View style={[styles.row,{fontSize: '14',fontWeight: boldWeight}]}>
-                          <Text>{title}</Text>
-                        </View>
-                        <View style={[styles.row,{fontSize: regularSize, fontWeight: 'semibold'}]}>
-                          <Text>{company}</Text>
-                          <Text style={{marginHorizontal: 4}}>-</Text>
-                          <Text style={{fontStyle: 'italic'}}>{location}</Text>
-                        </View>
-                        <View style={[styles.row,{fontSize: regularSize,fontWeight: regularWeight, width: 400}]}>
-                          <Text>
-                            {content && parseContent(content)}
-                          </Text>
-                        </View>
+                      <View
+                        style={[
+                          styles.row,
+                          { fontSize: regularSize, fontWeight: "semibold" },
+                        ]}
+                      >
+                        <Text>{company}</Text>
+                        <Text style={{ marginHorizontal: 4 }}>-</Text>
+                        <Text style={{ fontStyle: "italic" }}>{location}</Text>
+                      </View>
+                      <View
+                        style={[
+                          styles.column,
+                          {
+                            fontSize: regularSize,
+                            fontWeight: regularWeight,
+                            width: 400,
+                          },
+                        ]}
+                      >
+                        {content && parseContent(content)}
                       </View>
                     </View>
-                    
-                  </div>
-                );
-              }
-            )}
-        <View style={[styles.row,{fontSize: '14',fontWeight: boldWeight}]}>
+                  </View>
+                </div>
+              );
+            }
+          )}
+        <View style={[styles.row, { fontSize: "14", fontWeight: boldWeight }]}>
           <Text>Skills</Text>
         </View>
         {skills &&
           skills.map(({ experience, name }, i) => {
             return (
-              <View style={[styles.row,{fontSize: regularSize,fontWeight: regularWeight}]} key={i}>
+              <View
+                style={[
+                  styles.row,
+                  { fontSize: regularSize, fontWeight: regularWeight },
+                ]}
+                key={i}
+              >
                 <Text>{name}</Text>
                 <Text>
                   <div className="w-full bg-gray-200 rounded-full mb-2">

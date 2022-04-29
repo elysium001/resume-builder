@@ -1,3 +1,5 @@
+// import { PDFViewer } from '@react-pdf/renderer';
+// import MyDocument from './components/resume/topdf';
 import { useState } from 'react';
 import './App.css';
 import Navigation from './components/nav/nav';
@@ -20,6 +22,9 @@ function App() {
         {!showPDF && <Resume 
           openResume={openResumeBuilder} 
           onLoadResume={(resume)=>setResumeObject(resume)} />}
+        {/* {resumeObject && <PDFViewer className='pdf-viewer'>
+          <MyDocument resume={resumeObject}/>
+        </PDFViewer>} */}
         
       </div>
     </div>
