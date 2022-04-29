@@ -3,7 +3,7 @@ import MyDocument from './../resume/topdf';
 
 export default function Navigation(props) {
   const { resume, onCreateResume } = props
-  const [instance, updateInstance] = usePDF({ document: <MyDocument resume={resume}/> });
+  const [instance] = usePDF({ document: <MyDocument resume={resume}/> });
 
 
   return (
