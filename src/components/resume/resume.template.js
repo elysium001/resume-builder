@@ -7,7 +7,7 @@ const exampleResume = {
   address: "Rio Rancho, NM",
   phone: "505-603-7069",
   email: "a.omarserrano@gmail.com",
-  objective: `Versatile Systems Engineer with over seven years of cross-functional leadership in implementation, validation and deployment of large complex systems. Exceptional knowledge of Web-Technologies. Well-versed in large-scale deployments, migrations and custom CMS solutions.`,
+  objective: `Highly skilled software development professional bringing enormous talents for software design, development and integration. Offering advanced knowledge of in-demand programming languages. Background writing code and developing systems for DOE applications.`,
   workHistory: [
     {
       startDate: "10/2019",
@@ -35,10 +35,10 @@ const exampleResume = {
     },
   ],
   skills: [
-    { experience: 87.0, name: "ReactJS" },
+    { experience: 95.0, name: "ReactJS" },
     { experience: 97.0, name: "WordPress" },
-    { experience: 67.0, name: "WebPack JS" },
-    { experience: 77.0, name: "PHP" },
+    { experience: 100.0, name: "WebPack JS" },
+    { experience: 90.0, name: "PHP" },
   ],
 };
 
