@@ -2,16 +2,24 @@ import React, { useEffect, useState } from "react";
 import "./resume.template.css";
 
 const exampleResume = {
-  name: "Andres O. Serrano",
-  title: "Software Systems Engineer",
+  name: "Omar Serrano",
+  title: "Code Wrangler",
   address: "Rio Rancho, NM",
   phone: "505-603-7069",
   email: "a.omarserrano@gmail.com",
-  objective: `Highly skilled software development professional bringing enormous talents for software design, development and integration. Offering advanced knowledge of in-demand programming languages. Background writing code and developing systems for DOE applications.`,
+  objective: `Dedicated and innovative WordPress developer with seven years of hands-on experience in crafting dynamic and user-friendly websites. My passion for staying at the forefront of web development technologies has led me to specialize in JavaScript and the Gutenberg developer API. My objective is to leverage my expertise to create seamless and interactive web experiences while continuously expanding my skillset to contribute to cutting-edge projects and drive digital innovation.`,
   workHistory: [
     {
-      startDate: "10/2019",
+      startDate: "10/2022",
       endDate: "Current",
+      title: "Code Wrangler",
+      company: "Automattic",
+      location: "Remote",
+      content: `<ul><li>Proactively build and maintain strong client relationships, ensuring that WPVIP clients receive the highest level of support and service, acting as their dedicated advocate within the organization.</li><li>Provide expert guidance on WordPress VIP platform capabilities, best practices, and optimization strategies to clients, helping them maximize the value of their WordPress websites.</li><li>Troubleshoot and resolve complex technical issues efficiently, collaborating with cross-functional teams to ensure timely and effective solutions, minimizing downtime and disruption for clients.</li><li>Conduct training sessions and workshops for clients to empower them with the knowledge and tools needed to manage and optimize their WordPress VIP platforms, fostering self-sufficiency and satisfaction.</li></ul>`,
+    },
+    {
+      startDate: "10/2019",
+      endDate: "10/2022",
       title: "Software Systems Engineer",
       company: "Sandia National Laboratories",
       location: "Albuquerque, NM",
@@ -37,7 +45,7 @@ const exampleResume = {
   skills: [
     { experience: 95.0, name: "ReactJS" },
     { experience: 97.0, name: "WordPress" },
-    { experience: 100.0, name: "WebPack JS" },
+    { experience: 93.0, name: "Javascript" },
     { experience: 90.0, name: "PHP" },
   ],
 };
