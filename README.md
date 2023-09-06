@@ -1,4 +1,13 @@
-# Simple Resume Component
+# 📄 Resume Builder and PDF Generator with ReactJS 🚀
+
+Create a polished and professional resume effortlessly using this ReactJS-powered web application. Craft your custom resume content, style it with ease, and generate a downloadable PDF copy in seconds.
+
+Key Features:
+- ✨ User-Friendly Interface: Intuitive design makes resume creation a breeze, even for beginners.
+- 📝 Customizable Templates: Choose from a variety of stunning templates to suit your personal style.
+- 📄 Sections Galore: Add, edit, or remove sections like experience, education, skills, and more.
+- 🔄 Real-Time Preview: Instantly see how your resume looks as you make changes.
+- 📥 PDF Export: Download a professionally formatted PDF version of your resume in a single click.
 
 ### Preview URL
 [https://elysium001.github.io/resume/](https://elysium001.github.io/resume/)
